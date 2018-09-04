@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f685f823f23884055a4bdf5b7bc3469d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f685f823f23884055a4bdf5b7bc3469d, type: 3}
       propertyPath: m_LocalScale.x
@@ -172,6 +172,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0f420f73af4b8c944b8baeb5c3f58644, type: 2}
+    - target: {fileID: 100000, guid: f685f823f23884055a4bdf5b7bc3469d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f685f823f23884055a4bdf5b7bc3469d, type: 3}
   m_IsPrefabAsset: 0
