@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StateModels : MonoBehaviour {
-	[SerializeField]
-	private GameObject model;
-	private Animator animator;
 
-	[SerializeField]
-	private AnimationClip walkingClip;
-	[SerializeField]
-    private AnimationClip dieClip;
+	public GameObject model;
+	private Animator animator;
+    
 	// Use this for initialization
 	void Start () { 
 		animator = model.GetComponent<Animator>();
