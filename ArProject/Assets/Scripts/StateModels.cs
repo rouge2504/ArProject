@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class StateModels : MonoBehaviour {
 
@@ -11,18 +13,16 @@ public class StateModels : MonoBehaviour {
 
 	private Renderer[] renderers;
 
-	private bool startDissolve;
+	private bool move;
 
-	private float speed;
-
-	private float dissolve;
+	public float speed;
+    
+	public Text debug;
     
 	// Use this for initialization
 	void Start () {
-		dissolve = 0;
-		speed = 0;
+		move = false;
 		animator = model.GetComponent<Animator>();
-		startDissolve = false;
 
 		renderers = new Renderer[_materials.Length];
 		for (int i = 0; i < _materials.Length; i++){
@@ -35,7 +35,10 @@ public class StateModels : MonoBehaviour {
 		/*if (Input.GetKeyDown(KeyCode.A)){
 			DieState();
 		}*/
-		InitDissolve();
+		debug.text = "YPosition: " + model.transform.position.y;
+		if (move){
+			model.transform.Translate(0, -Time.deltaTime * speed, 0);
+		}
 	}
 
 	public void DieState(){
@@ -43,17 +46,8 @@ public class StateModels : MonoBehaviour {
 	}
 
 	public void Dissolve(){
-		startDissolve = true;
+		move = true;
 	}
 
-	private void InitDissolve(){
-		if (startDissolve){
-			float dissolve = Shader.GetGlobalFloat("dissolve");
-			dissolve += Time.deltaTime;
-			for (int i = 0; i < _materials.Length; i++)
-            {
-				//dissolve = renderers[i].material.
-            }
-		}
-	}
+
 }
