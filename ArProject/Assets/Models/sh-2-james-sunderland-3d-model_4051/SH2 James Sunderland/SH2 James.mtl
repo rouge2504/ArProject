@@ -1,0 +1,112 @@
+# Blender3D MTL File: 
+# Material Count: 10
+newmtl Material__35_SH2_Jame_SH2_James_pants.tga
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_pants.tga
+
+
+newmtl Material__47_SH2_Jame_SH2_James_jacket.tga
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_jacket.tga
+
+
+newmtl Material__31_SH2_Jame_SH2_James_pants.tga
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_pants.tga
+
+
+newmtl Material__30_SH2_Jame_SH2_James_pants.tga
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_pants.tga
+
+
+newmtl Material__54_SH2_Jame_SH2_James_head.tga
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_head.tga
+
+
+newmtl Material__52_SH2_Jame_SH2_James_pants.tga
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_pants.tga
+
+
+newmtl Material__34_SH2_Jame_SH2_James_jacket.tga
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_jacket.tga
+
+
+newmtl Material__60_SH2__SH2_James_head.tga
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_head.tga
+
+
+newmtl Material__60_SH2_Jame_SH2_James_hair.png
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_hair.png
+
+
+newmtl Material__56_SH2_Jame_SH2_James_head.tga
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.376320 0.376320 0.376320
+Ks 0.000000 0.000000 0.000000
+Ni 1.500000
+d 0.000000
+illum 2
+map_Kd SH2_James_head.tga
+
+
