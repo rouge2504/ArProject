@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using NatCorderU.Core;
+using NatCorderU.Core.Clocks;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
     [SerializeField]
@@ -10,8 +13,13 @@ public class MenuManager : MonoBehaviour {
     private VuforiaMonoBehaviour vuforia;
     private float timeTitle;
     private float timingTitle;
-	// Use this for initialization
-	void Start () {
+
+    public RawImage raw;
+ 
+    IClock recordingClock;
+    WebCamTexture cameraTexture;
+    // Use this for initialization
+    void Start () {
         timeTitle = 4;
         timingTitle = 0;
 		for (int i = 0; i < menus.Length; i++)
@@ -20,11 +28,16 @@ public class MenuManager : MonoBehaviour {
         }
         menus[0].SetActive(true);
         vuforia.enabled = false;
+
+        cameraTexture = new WebCamTexture();
+        cameraTexture.Play();
+        raw.texture = cameraTexture;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         TimeTitle();	
+
 	}
 
     private void TimeTitle()
@@ -38,6 +51,11 @@ public class MenuManager : MonoBehaviour {
                 menus[1].SetActive(true);
             }
         }
+
+       /* if (Input.GetKeyDown(KeyCode.A))
+        {
+            Recorder();
+        }*/
     }
 
     public void GetPage(GameObject page)
@@ -48,5 +66,48 @@ public class MenuManager : MonoBehaviour {
         }
         page.SetActive(true);
         vuforia.enabled = true;
+    }
+
+    IEnumerator RecorderCourutine()
+    {
+        print("Empezando a grabar");
+        recordingClock = new RealtimeClock();
+
+        NatCorder.StartRecording(Container.MP4, VideoFormat.Screen, AudioFormat.None, OnVideo);
+        // Wait for 10 seconds
+        StartCoroutine(RecordLoop());
+        yield return new WaitForSeconds(10f);
+        // Stop recording
+        // The `OnVideo` callback will be invoked with the path to the recorded video
+        NatCorder.StopRecording();
+        print("GRabado");
+    }
+
+    IEnumerator RecordLoop()
+    {
+        while (NatCorder.IsRecording)
+        {
+            // Acquire an encoder frame from NatCorder
+            var frame = NatCorder.AcquireFrame();
+            // Blit the current camera preview frame to the encoder frame
+            Graphics.Blit(cameraTexture, frame);
+            // Commit the frame to NatCorder for encoding
+            NatCorder.CommitFrame(frame, recordingClock.CurrentTimestamp);
+            // Wait for the end of the application frame
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    public void Recorder()
+    {
+        StartCoroutine(RecorderCourutine());
+    }
+
+
+    void OnVideo(string path)
+    {
+        print("path");
+        path = Application.persistentDataPath + "/videoprueba";
+        print("path: " + path);
     }
 }
