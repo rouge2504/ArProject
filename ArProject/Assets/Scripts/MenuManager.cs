@@ -46,9 +46,9 @@ public class MenuManager : MonoBehaviour {
         menus[0].SetActive(true);
         //vuforia.enabled = false;
         m_Gyro = Input.gyro;
-        //cameraTexture = new WebCamTexture();
-        //cameraTexture.Play();
-        //raw.texture = cameraTexture;
+       /* cameraTexture = new WebCamTexture();
+        cameraTexture.Play();
+        raw.texture = cameraTexture;*/
     }
 	
 	// Update is called once per frame
@@ -133,6 +133,7 @@ public class MenuManager : MonoBehaviour {
              var frame = NatCorder.AcquireFrame();
              // Blit the current camera preview frame to the encoder frame
              Graphics.Blit(cameraTexture, frame);
+            
              // Commit the frame to NatCorder for encoding
              NatCorder.CommitFrame(frame, recordingClock.CurrentTimestamp);
              // Wait for the end of the application frame
@@ -144,13 +145,13 @@ public class MenuManager : MonoBehaviour {
      {
          Debug.Log("Entrando en la funcion Recorder");
          StartCoroutine(RecorderCourutine());
-     }*/
+     }
 
 
     void OnVideo(string path)
     {
         print("path");
-        path = Application.persistentDataPath + "/videoprueba";
+        path = Application.persistentDataPath;
         print("path: " + path);
-    }
+    }*/
 }
