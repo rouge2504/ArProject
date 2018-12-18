@@ -84,16 +84,21 @@ public class MenuManager : MonoBehaviour {
         }
         page.SetActive(true);
         vuforia.enabled = true;
+        Animator _animator;
         if (m_Gyro.enabled)
         {
             placaGO.SetActive(true);
             baseGO.SetActive(false);
+            _animator = placaGO.GetComponentInChildren<Animator>();
         }
         else
         {
             placaGO.SetActive(false);
             baseGO.SetActive(true);
+            _animator = baseGO.GetComponentInChildren<Animator>();
         }
+
+        _animator.Play("Walk");
     }
 
     /* IEnumerator RecorderCourutine()
