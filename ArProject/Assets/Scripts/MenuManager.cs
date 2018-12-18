@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Vuforia;
 
 public class MenuManager : MonoBehaviour {
     [SerializeField]
@@ -11,6 +12,8 @@ public class MenuManager : MonoBehaviour {
 
     [SerializeField]
     private VuforiaMonoBehaviour vuforia;
+    [SerializeField]
+    private VuforiaARController vuforiaBehaviour;
     private float timeTitle;
     private float timingTitle;
 
@@ -28,6 +31,11 @@ public class MenuManager : MonoBehaviour {
     //IClock recordingClock;
     //WebCamTexture cameraTexture;
     // Use this for initialization
+
+    private void Awake()
+    {
+        VuforiaARController.Instance.SetWorldCenterMode(VuforiaARController.WorldCenterMode.DEVICE);
+    }
     void Start () {
         timeTitle = 4;
         timingTitle = 0;
@@ -36,12 +44,12 @@ public class MenuManager : MonoBehaviour {
             menus[i].SetActive(false);
         }
         menus[0].SetActive(true);
-        vuforia.enabled = false;
-
+        //vuforia.enabled = false;
+        m_Gyro = Input.gyro;
         //cameraTexture = new WebCamTexture();
         //cameraTexture.Play();
         //raw.texture = cameraTexture;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -84,6 +92,7 @@ public class MenuManager : MonoBehaviour {
         }
         page.SetActive(true);
         vuforia.enabled = true;
+        VuforiaARController.Instance.SetWorldCenterMode(VuforiaARController.WorldCenterMode.DEVICE);
         Animator _animator;
         if (m_Gyro.enabled)
         {
