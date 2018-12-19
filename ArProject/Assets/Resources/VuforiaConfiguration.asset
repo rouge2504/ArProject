@@ -8,20 +8,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2067402452, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Script: {fileID: -2067402452, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: AQd/bfb/////AAABmX3tt3YPYEM+qNx/ssKUdG2HMzQ4qNUnMsdVoDcnlORLjTK02fu8tZoNGTYpQezLBbd/tx5RdPaz89ML1+hDfH9XA+kdxXnrdlMkbrDEOfI2xUI7D3rH7vMeiG8X/L65BZkXFGd2KTiVmmqZNDH8RvcYh+MjxieWHWGwTCBTaoBXjJaZf/fnSF7t1pB65RtCV8MZ+2wZNS22G0iRwKsAjhWk0dl2w7kw1R6qXQ6kbgOex/InaFHfnNwDdVvKfxaIvNkuAPY9WMQ0OvAKTznvOo6bAB1tzWhvVzHorQ3VH7NtCWeyEH9YOS9oIRhcNVarq+pYHxfzB0JoqsEur4HvKOyE4sN1m/7SSlpm1p2FzoVP
-    ufoLicenseKey: QWU1RFpFNy8vLy8vQUFBQUtESzNlU0ZwM2tmVmo5UURINXNLWDBoRUZDTEJpVmlNdnNGQm5CSWtlSFNYVUZKRGlvcks0NXdWN3NjcXhtTjhkRGcrQWY0WlQ3MkVPclQwMEN1Z3pQS1VaL0l6cW1RdnBUOEYvcUJNdURRa3UrZ3NpME5jQUI5NlJycENvc0MwSUNVTjd1L1B4YXh1TDdUS3Z0SFBKa0JFU2VzanRrYjYvbkhXTFNmWmJLUXpHcHFmclhqTHR3cERnbzNqZUJucUpVR0dreVR0b0RxV2NOM3FZOVRzdXp6akVIS3VxWkxaU3BRa3dKTXJ6eUF4VC9pVCthUlloNG5qWUUyQ3FLdm9XekhzeEt6SVkzNVZlM2JrN2k2aHJMVERISXhwbitFZG5mYXZUWmVSZnhCQ0hqZFMyeldNbkRmb2thNTB6aXArbnlTa1RoNW9rSVdFaWRDT2RhSXFXaU5rWm1nbWZOcnMvK3g2Q0EyVjJjKzU=
+    vuforiaLicenseKey: AT/fgQ7/////AAAACJvuCH5Ui0/cgxMP4BTdE1o6O//Kyc3knbVR+Dm7XZPLouXjps6omDHvy5nCn0kboW7DS5Pyz8zhIf9KMI1IKI5Tk8SdKbybMZqZSK9AKdGcErcBxhN/PwB3DCGZl9R8I04dIoOuPpnlTL5IOke910aIxtx/oXjpFnImPBoMO2WC3aQI4nIijg6HEbZiAJN1Pl57NwqhR6OjPTe769DR31VsAEAinFEU0Qgq+6L58T9GwVbsfvj+FZmgso7PUiNTRN5+1MN7+eyFyQzbk5HzrlAEn06aXr+BHoEcXLhEBL5TjuEKHSemf6vR8TuJBFoveH3U9sw1Dedy4o6guahPwyuicl5c3QE6xDLjoM94iBo6
+    ufoLicenseKey: QVIxUGVOLy8vLy8vQUFBQUtIK3BERnFtRkVueGdyMVBSTlRMQmNHRy9acW8zYWFGRm5ZcnMrOWpMdm9zOXRyY3FWcE0zQkt3OWlLVDdBOWVLU0M2L0ViQ0VPZ0d0VDdwZ0hhbHpwU3FGUWl3RXRQMnBBR0d5Ulh3eWVyMWNjMTNTb3RxLzUyNmdnZnQ2ZGdVbDFZUmhzMDZuVDR5VCs0VW8wTzVWWWxEcnRJRlFKVlNTVXpqcDZWRGRiUnJIUEJFTEZRQVA5ZllndDV5QlJTVUQrMzdUa1BqR1AwVUJPYkY2dEpvUkJ4QWVzLy9VN2xIR1ZTaFVFd3loMmlDMmZMcUtwZlpxa0czOGxML2x4WUVJWVhibkdYT0M0M1BIbEc5cU43QzNnaTRlU0wvb09FY3ZUb0h5cC9xc085bCtESnR4MFJkV2ZEUVVHVDdWNktveExPbXF3OVVIb21nM3EwL0U2UjFkbmpOZVhCd21zcjhCZnBCaDZVSU9NT3Q=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 4
+    maxSimultaneousImageTargets: 1
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
     cameraDirection: 0
     mirrorVideoBackground: 0
-    version: 7.2.24
+    version: 7.2.23
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
@@ -51,8 +51,8 @@ MonoBehaviour:
     matteShader: {fileID: 15310, guid: 0000000000000000f000000000000000, type: 0}
     videoBackgroundEnabled: 1
   deviceTracker:
-    autoInitTracker: 1
-    autoStartTracker: 1
+    autoInitTracker: 0
+    autoStartTracker: 0
     trackingMode: 1
     posePrediction: 0
     modelCorrectionMode: 0
