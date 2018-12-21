@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
 	[SerializeField]
@@ -8,8 +9,14 @@ public class MenuManager : MonoBehaviour {
 
 	private float timeTitle;
     private float timingTitle;
+
+    [SerializeField]
+    private YoutubePlayer youtubePlayer;
+
+    [SerializeField]
+    private GameObject textureVideo;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		timeTitle = 4;
         timingTitle = 0;
         for (int i = 0; i < menus.Length; i++)
@@ -17,12 +24,30 @@ public class MenuManager : MonoBehaviour {
             menus[i].SetActive(false);
         }
         menus[0].SetActive(true);
-	}
+
+        youtubePlayer.OnVideoFinished.AddListener(DisableVideo);
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		TimeTitle();
 	}
+
+    public void PlayVideo()
+    {
+        youtubePlayer.enabled = false;
+        youtubePlayer.autoPlayOnEnable = true;
+        youtubePlayer.enabled = true;
+        youtubePlayer.videoPlayer.Play();
+        youtubePlayer.audioPlayer.Play();
+    }
+
+    private void DisableVideo()
+    {
+        textureVideo.SetActive(false);
+        youtubePlayer.enabled = false;
+        youtubePlayer.autoPlayOnEnable = false;
+    }
 
 	private void TimeTitle()
     {
