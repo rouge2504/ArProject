@@ -11,12 +11,25 @@ public class MenuManager : MonoBehaviour {
     private float timingTitle;
 
     [SerializeField]
+    private Animator _animator;
+
+    [SerializeField]
     private YoutubePlayer youtubePlayer;
 
     [SerializeField]
     private GameObject textureVideo;
+
+    public static bool activeModel;
+
+    private float timeToAnimation;
+    private float timingToAnimation;
+
+    private Vector3 initPosition;
 	// Use this for initialization
 	void Awake () {
+        timeToAnimation = 13;
+        timingToAnimation = 0;
+        initPosition = _animator.transform.position;
 		timeTitle = 4;
         timingTitle = 0;
         for (int i = 0; i < menus.Length; i++)
@@ -31,7 +44,39 @@ public class MenuManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		TimeTitle();
+
+        CheckAnimation();
 	}
+
+    void CheckAnimation()
+    {
+
+        if (activeModel)
+        {
+            _animator.SetBool("activeAnimation", true);
+
+            timingToAnimation += Time.deltaTime;
+            if (timingToAnimation > timeToAnimation)
+            {
+                
+                _animator.transform.Translate(0, -10f * Time.deltaTime, 0);
+
+                if (_animator.transform.localPosition.y < -0.55f)
+                {
+                    _animator.gameObject.transform.position = initPosition;
+                    timingToAnimation = 0;
+                    _animator.Play("Die", -1, 0f);
+                }
+            }
+        }
+        else
+        {
+            _animator.SetBool("activeAnimation", false);
+            timingToAnimation = 0;
+            _animator.gameObject.transform.position = initPosition;
+            _animator.Play("Die", -1, 0f);
+        }
+    }
 
     public void PlayVideo()
     {
