@@ -1651,12 +1651,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1126006589}
-        m_MethodName: GetPage
-        m_Mode: 2
+      - m_Target: {fileID: 1772100407}
+        m_MethodName: StartRecord
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 952997104}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2187,7 +2187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1212521814
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2707,7 +2707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1437587846
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3309,6 +3309,8 @@ GameObject:
   - component: {fileID: 1772100404}
   - component: {fileID: 1772100403}
   - component: {fileID: 1772100402}
+  - component: {fileID: 1772100407}
+  - component: {fileID: 1772100408}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: Untagged
@@ -3400,6 +3402,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1772100407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1772100401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f9662ef0a706c4a9f2f7e643d468b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _whenRecordingAutoHideUI: 1
+  _showUI: 1
+  _movieCapture: {fileID: 0}
+--- !u!114 &1772100408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1772100401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d29444a3446e8b4fbe2e76a72d7d598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _postCaptureSettings:
+    writeFastStartStreamingForMp4: 1
+  _captureKey: 0
+  _captureOnStart: 0
+  _startPaused: 0
+  _listVideoCodecsOnStart: 0
+  _isRealTime: 1
+  _persistAcrossSceneLoads: 0
+  _stopMode: 0
+  _stopFrames: 0
+  _stopSeconds: 0
+  _useMediaFoundationH264: 0
+  _videoCodecPriority:
+  - Lagarith Lossless Codec
+  - x264vfw - H.264/MPEG-4 AVC codec
+  - Xvid MPEG-4 Codec
+  - ffdshow video encoder
+  - Cinepak Codec by Radius
+  _frameRate: 30
+  _timelapseScale: 1
+  _downScale: 1
+  _maxVideoSize: {x: 0, y: 0}
+  _forceVideoCodecIndex: -1
+  _flipVertically: 0
+  _supportAlpha: 0
+  _forceGpuFlush: 0
+  _noAudio: 0
+  _audioCodecPriority: []
+  _forceAudioCodecIndex: -1
+  _forceAudioDeviceIndex: -1
+  _audioCapture: {fileID: 0}
+  _autoGenerateFilename: 1
+  _outputFolderType: 0
+  _outputFolderPath: 
+  _autoFilenamePrefix: Demo1Scene
+  _autoFilenameExtension: avi
+  _forceFilename: movie.avi
+  _imageSequenceStartFrame: 0
+  _imageSequenceZeroDigits: 6
+  _outputType: 0
+  _imageSequenceFormat: 0
+  _renderResolution: 14
+  _renderSize: {x: 1, y: 1}
+  _renderAntiAliasing: 0
+  _useMotionBlur: 0
+  _motionBlurSamples: 15
+  _motionBlurCameras:
+  - {fileID: 0}
+  _allowVSyncDisable: 1
+  _supportTextureRecreate: 0
+  _captureMouseCursor: 0
+  _mouseCursor: {fileID: 0}
+  _minimumDiskSpaceMB: -1
 --- !u!1 &1794208984
 GameObject:
   m_ObjectHideFlags: 0
