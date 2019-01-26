@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start-prima.unity
     guid: 388727b15d0a548948e5001249f2b355
+  - enabled: 0
+    path: Assets/Images2Video/Demo/VuforiaExample.unity
+    guid: 1305fae01f65843838e82e853a798e0c
   m_configObjects: {}
