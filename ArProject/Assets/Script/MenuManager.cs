@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using NatShareU;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
-	[SerializeField]
-    private GameObject[] menus;
+	public GameObject[] menus;
 
 	private float timeTitle;
     private float timingTitle;
@@ -25,8 +25,15 @@ public class MenuManager : MonoBehaviour {
     private float timingToAnimation;
 
     private Vector3 initPosition;
+
+    public static MenuManager instance;
+
+    [HideInInspector]
+    public string path;
 	// Use this for initialization
 	void Awake () {
+        path = null;
+        instance = this;
         timeToAnimation = 13;
         timingToAnimation = 0;
         initPosition = _animator.transform.position;
@@ -121,5 +128,12 @@ public class MenuManager : MonoBehaviour {
             menus[i].SetActive(false);
         }
         page.SetActive(true);
+    }
+
+    public void ShareButton()
+    {
+        Debug.Log("Path: " + path);
+        string videoPath = RecordVideo.instance.vuforiaCamera.vcObj.outputVideoName;
+        NatShare.Share(videoPath);
     }
 }

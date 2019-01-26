@@ -8,10 +8,14 @@ using tw.com.championtek;
 public class RecordVideo : MonoBehaviour {
 
     private GameObject attachToARCamera = null;
-    private VuforiaCamera vuforiaCamera = null;
+    [HideInInspector]
+    public VuforiaCamera vuforiaCamera = null;
+
+    public static RecordVideo instance;
     // Use this for initialization
     void Start()
     {
+        instance = this;
         this.attachToARCamera = GameObject.Find("AttachToARCamera");
         this.vuforiaCamera = (VuforiaCamera)this.attachToARCamera.GetComponent("VuforiaCamera");
     }

@@ -87,8 +87,9 @@ namespace tw.com.championtek
 
             recording = false;
             FinalizeRecording();
-
-            videoConverter.DisplayProgress("Converting", "Processing");
+            MenuManager.instance.GetPage(MenuManager.instance.menus[3]);
+            MenuManager.instance.path = outputVideoName;
+            videoConverter.DisplayProgress("Guardando", "Guardando video, espere por favor");
             if (type == (int)StopType.Stop)
                 videoConverter.ConvertingTextureFinished();
             else
@@ -224,7 +225,10 @@ namespace tw.com.championtek
             deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
 
             if ((duration > 0) && (indicator == end_index))
+            {
                 EndShot();
+                Debug.Log("Terminado de grabar");
+            }
 
         }
 
