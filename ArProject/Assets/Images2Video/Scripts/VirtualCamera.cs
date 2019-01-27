@@ -36,7 +36,7 @@ namespace tw.com.championtek
 
         private float volume = 1.0f;
         private int end_index = 0;
-        private string videoFilePath;
+        public string videoFilePath;
         public void BeginShot()
         {
 #if (UNITY_IOS || UNITY_ANDROID)
@@ -413,7 +413,7 @@ namespace tw.com.championtek
         public void End(string videoPath)
         {
 #if (UNITY_IOS || UNITY_ANDROID)
-            Debug.Log("Callback End : " + videoPath);
+            Debug.Log("Callback End on VirtualCamera: " + videoPath);
             videoConverter.DismissProgress();
             videoConverter.DisplayMessage("The generated video path : " + videoPath);
 

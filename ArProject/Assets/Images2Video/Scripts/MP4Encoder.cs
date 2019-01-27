@@ -197,7 +197,7 @@ namespace tw.com.championtek
         /// <param name="videoPath">The generated video file path</param>
         public void End(string videoPath)
         {
-            Debug.Log("Callback End : " + videoPath);
+            Debug.Log("Callback End on MP4Encoder: " + videoPath);
 #if (UNITY_IOS || UNITY_ANDROID)
             videoConverter.DismissProgress();
             videoConverter.DisplayMessage("The generated video path : " + videoPath);

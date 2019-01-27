@@ -109,7 +109,7 @@ namespace tw.com.championtek
             Debug.Log("Callback End : " + videoPath);
 
             videoConverter.DismissProgress();
-            videoConverter.DisplayMessage("The generated video path : " + videoPath);
+            videoConverter.DisplayMessage("The generated video path on MixMP4: " + videoPath);
 #endif
         }
         // private void CreateDirectoryIfNotExist()

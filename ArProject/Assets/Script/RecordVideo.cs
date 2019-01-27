@@ -27,6 +27,14 @@ public class RecordVideo : MonoBehaviour {
 
     }
 
+    //IEnumerator BeginRec()
+    //{
+    //    this.vuforiaCamera.vcObj.duration = 10;
+    //    this.vuforiaCamera.Begin();
+    //    yield return new WaitForSeconds(10);
+    //    this.vuforiaCamera.End();
+    //}
+
     public void EndShot()
     {
         this.vuforiaCamera.End();

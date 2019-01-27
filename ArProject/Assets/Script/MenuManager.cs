@@ -132,8 +132,9 @@ public class MenuManager : MonoBehaviour {
 
     public void ShareButton()
     {
-        Debug.Log("Path: " + path);
-        string videoPath = RecordVideo.instance.vuforiaCamera.vcObj.outputVideoName;
+        
+        string videoPath = RecordVideo.instance.vuforiaCamera.vcObj.videoFilePath;
+        print("Path: " + videoPath);
         NatShare.Share(videoPath);
     }
 }
