@@ -2,6 +2,5 @@
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
     <ImageTarget name="Diana" size="100.000000 100.312500" />
-    <ImageTarget name="LogoFIDH" size="100.000000 77.272728" />
   </Tracking>
 </QCARConfig>
