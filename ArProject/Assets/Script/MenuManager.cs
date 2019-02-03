@@ -14,6 +14,9 @@ public class MenuManager : MonoBehaviour {
     private Animator _animator;
 
     [SerializeField]
+    private Animator _animator2;
+
+    [SerializeField]
     private YoutubePlayer youtubePlayer;
 
     [SerializeField]
@@ -26,6 +29,8 @@ public class MenuManager : MonoBehaviour {
 
     private Vector3 initPosition;
 
+    private Vector3 initPosition2;
+
     public static MenuManager instance;
 
     [HideInInspector]
@@ -37,6 +42,7 @@ public class MenuManager : MonoBehaviour {
         timeToAnimation = 13;
         timingToAnimation = 0;
         initPosition = _animator.transform.position;
+        initPosition2 = _animator2.transform.position;
 		timeTitle = 4;
         timingTitle = 0;
         for (int i = 0; i < menus.Length; i++)
@@ -61,18 +67,27 @@ public class MenuManager : MonoBehaviour {
         if (activeModel)
         {
             _animator.SetBool("activeAnimation", true);
+            _animator2.SetBool("activeAnimation", true);
 
             timingToAnimation += Time.deltaTime;
             if (timingToAnimation > timeToAnimation)
             {
                 
                 _animator.transform.Translate(0, -10f * Time.deltaTime, 0);
+                _animator2.transform.Translate(0, -10f * Time.deltaTime, 0);
 
                 if (_animator.transform.localPosition.y < -0.55f)
                 {
                     _animator.gameObject.transform.position = initPosition;
                     timingToAnimation = 0;
                     _animator.Play("Die", -1, 0f);
+                }
+
+                if (_animator2.transform.localPosition.y < -0.55f)
+                {
+                    _animator2.gameObject.transform.position = initPosition2;
+                    timingToAnimation = 0;
+                    _animator2.Play("Die", -1, 0f);
                 }
             }
         }
@@ -82,6 +97,10 @@ public class MenuManager : MonoBehaviour {
             timingToAnimation = 0;
             _animator.gameObject.transform.position = initPosition;
             _animator.Play("Die", -1, 0f);
+
+            _animator2.SetBool("activeAnimation", false);
+            _animator2.gameObject.transform.position = initPosition2;
+            _animator2.Play("Die", -1, 0f);
         }
     }
 
