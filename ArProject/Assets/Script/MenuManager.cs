@@ -23,7 +23,7 @@ public class MenuManager : MonoBehaviour {
     private GameObject textureVideo;
 
     public static bool activeModel;
-
+    [SerializeField]
     private float timeToAnimation;
     private float timingToAnimation;
 
@@ -35,11 +35,14 @@ public class MenuManager : MonoBehaviour {
 
     [HideInInspector]
     public string path;
+
+    [SerializeField]
+    private float speed;
 	// Use this for initialization
 	void Awake () {
         path = null;
         instance = this;
-        timeToAnimation = 13;
+        //timeToAnimation = 13;
         timingToAnimation = 0;
         initPosition = _animator.transform.position;
         initPosition2 = _animator2.transform.position;
@@ -73,8 +76,8 @@ public class MenuManager : MonoBehaviour {
             if (timingToAnimation > timeToAnimation)
             {
                 
-                _animator.transform.Translate(0, -10f * Time.deltaTime, 0);
-                _animator2.transform.Translate(0, -10f * Time.deltaTime, 0);
+                _animator.transform.Translate(0, -speed* Time.deltaTime, 0);
+                _animator2.transform.Translate(0, -speed * Time.deltaTime, 0);
 
                 if (_animator.transform.localPosition.y < -0.55f)
                 {
