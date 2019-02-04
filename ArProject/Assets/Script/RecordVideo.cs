@@ -12,6 +12,9 @@ public class RecordVideo : MonoBehaviour {
     public VuforiaCamera vuforiaCamera = null;
 
     public static RecordVideo instance;
+
+    [SerializeField]
+    private int duration;
     // Use this for initialization
     void Start()
     {
@@ -22,7 +25,7 @@ public class RecordVideo : MonoBehaviour {
 
     public void BeginShot()
     {
-        this.vuforiaCamera.vcObj.duration = 10;
+        this.vuforiaCamera.vcObj.duration = duration;
         this.vuforiaCamera.Begin();
 
     }
