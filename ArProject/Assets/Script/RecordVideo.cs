@@ -10,7 +10,7 @@ public class RecordVideo : MonoBehaviour {
     private GameObject attachToARCamera = null;
     [HideInInspector]
     public VuforiaCamera vuforiaCamera = null;
-
+    public int Duration;
     public static RecordVideo instance;
     // Use this for initialization
     void Start()
@@ -22,7 +22,7 @@ public class RecordVideo : MonoBehaviour {
 
     public void BeginShot()
     {
-        this.vuforiaCamera.vcObj.duration = 10;
+        this.vuforiaCamera.vcObj.duration = Duration;
         this.vuforiaCamera.Begin();
 
     }
