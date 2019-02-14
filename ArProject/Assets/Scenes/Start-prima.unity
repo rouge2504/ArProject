@@ -2067,7 +2067,7 @@ RectTransform:
   m_AnchorMin: {x: 0.30844125, y: 0}
   m_AnchorMax: {x: 0.6891917, y: 0.14948809}
   m_AnchoredPosition: {x: 1.4998169, y: 42.999878}
-  m_SizeDelta: {x: -105.81271, y: 70.66803}
+  m_SizeDelta: {x: -105.03671, y: 70.66803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &810245113
 MonoBehaviour:
@@ -3606,6 +3606,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1007972655}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1126006589}
+        m_MethodName: PlayVideo
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
